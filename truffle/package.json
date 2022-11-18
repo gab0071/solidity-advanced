@@ -5,5 +5,10 @@
   },
   "scripts": {
     "prettier": "prettier --write 'contracts/**/*.sol'"
-   }
+  },
+  "dependencies": {
+    "web3": "^1.7.3",
+    "yargs": "^17.6.2",
+    "yargs-parser": "^21.1.1"
+  }
 }

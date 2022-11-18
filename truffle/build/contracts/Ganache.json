@@ -5117,10 +5117,49 @@
       "links": {},
       "address": "0x4B14715179b0bE6e4f9Db0109D6b81189d85C588",
       "transactionHash": "0xa631f58c9b0868bb75a6e18f31ce5836e8f959bfc85feda180916ae101891bbd"
+    },
+    "1668733023092": {
+      "events": {
+        "0xe4f1e239ef633924ba611260f27425b0855d45f598b69b49f08f8dd9b2cc0fac": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "smartContract",
+              "type": "address"
+            }
+          ],
+          "name": "newContract",
+          "type": "event"
+        },
+        "0xb6b9255ef41b64a179028fa358d210c528409790c6daf4907f41fcba571e1112": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "message",
+              "type": "string"
+            }
+          ],
+          "name": "newMessage",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x515F3A87a581D6BF11D27674CF350540f599E793",
+      "transactionHash": "0xf631f3e40d7459c16967e721428946151a04d5028545f1ea21cc1af17ea01fd0"
     }
   },
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-11-17T20:58:23.821Z",
+  "updatedAt": "2022-11-18T02:20:28.452Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
