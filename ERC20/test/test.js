@@ -158,7 +158,6 @@ contract('customToken', (accounts) => {
         // Quemando Tokens
         it('✨ Burn Tokens ✨', async () => {
             let token = await customToken.deployed();
-
             // balance de la cuenta0  antes de la quema de tokens
             let before_burn = await token.balanceOf.call(_owner_);
             console.log('balance before burn: ', before_burn);
