@@ -25,6 +25,7 @@
   <br>
 
 <p> I love the Solidity programming language, I wanted to leave a guide for newcomers who want to dare to navigate this beautiful process of building smart contracts with Solidity.</p>
+<p>We'll raising our level with the smart contracts, we will work with the Truffle and Hardhat frameworks, test our smart contracts, and migrate our project with local networks as a ganache before moving to the testnet.</p>
 <p>You will be able to find all the advanced well explained, all taken from the best resources that exist in the web3 space.</p>
 <p>Feel free to write me if you have any questions, or if you just want advice on where to start.</p>
 
