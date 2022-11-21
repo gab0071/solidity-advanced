@@ -1,10 +1,6 @@
 <h1 aling="center">Small project with truffle framework 📚⛓</h1>
 
-[![Build Status](https://travis-ci.org/niltonvasques/simplecov-shields-badge.svg?branch=master)](https://travis-ci.org/niltonvasques/simplecov-shields-badge)
-<a href="https://github.com/gab0071/solidity-advanced/commits/main" target="_blank">
-<img src="https://img.shields.io/github/commit-activity/m/gab0071/solidity-advanced" alt="Badge showing average commit frequency per month"/>
-  </a>
-
+   [![Build Status](https://travis-ci.org/niltonvasques/simplecov-shields-badge.svg?branch=master)](https://travis-ci.org/niltonvasques/simplecov-shields-badge)
   <a href="https://github.com/gab0071/solidity-advanced/commits/main/truffle" target="_blank">
     <img src="https://img.shields.io/github/last-commit/gab0071/solidity-advanced" alt="Badge showing when the last commit was made"/>
   </a>
@@ -29,8 +25,6 @@
 <p>I hope you like this little example.</p>  
 <p>Feel free to write me if you have any questions, or if you just want advice on where to start.</p>
 
-
-
 <p>If you wanna start from the basics: click <a href="https://github.com/gab0071/solidity-fundamentals">here</a></p>
 <br>
 
@@ -39,9 +33,9 @@
 ```bash
 
 # Install dependencies
-$ npm install 
+$ npm install
 
-``` 
+```
 
 <p>Drop all necessary dependencies</p>
 <hr>
@@ -49,8 +43,8 @@ $ npm install
 <h2>Commands</h2>
 
 - $ `truffle compile `: Upon first run, all contracts will be compiled. Upon subsequent runs, Truffle will compile only the contracts that have been changed since the last compile.
-- $ `truffle migrate `: This will run all migrations located within your project's migrations directory.
-- $ `truffle test `: Run our tests in the test folder.
+- $ `truffle migrate `: This will run all migrations located within our project's migrations directory.
+- $ `truffle test `: Run all tests located within our project's test directory.
 
 <h2> Technologies / Built With </h2>
 
@@ -58,8 +52,8 @@ $ npm install
 - Metamask
 - Fake ETH (🚨 Note: <a href="https://goerlifaucet.com/"> Goerli Faucet</a>)
 - <a href="https://www.npmjs.com/package/@openzeppelin/contracts"> OpenZeppelin </a>
-- <a href="https://www.npmjs.com/package/ganache?activeTab=readme"> Ganache CLI  </a>
-- <a href="https://trufflesuite.com/ganache/"> Ganache GUI  </a>
+- <a href="https://www.npmjs.com/package/ganache?activeTab=readme"> Ganache CLI </a>
+- <a href="https://trufflesuite.com/ganache/"> Ganache GUI </a>
 
 <h2>Prettier definition </h2>
 <p> Prettier offers support for multiple languages and frameworks. What <Prettier> offers is to take your code and "re-format" it based on the defined settings thus maintaining a consistent style. Making it much more readable and without worrying about how you write it initially.</p>
@@ -71,7 +65,6 @@ $ npm install
 <h2>License</h2>
 
 <p>This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.</p>
-
 
 <p>Made with :heart: by <a href="https://github.com/gab0071" target="_blank">CatellaTech</a></p>
 
