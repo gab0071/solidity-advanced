@@ -1,6 +1,9 @@
 <h1 aling="center">Small project with truffle framework 📚⛓</h1>
 
-   [![Build Status](https://travis-ci.org/niltonvasques/simplecov-shields-badge.svg?branch=master)](https://travis-ci.org/niltonvasques/simplecov-shields-badge)
+   <a href="https://travis-ci.org/niltonvasques/simplecov-shields-badge" target="_blank">
+    <img src="https://travis-ci.org/niltonvasques/simplecov-shields-badge.svg?branch=master" alt="Badge showing when the last commit was made"/>
+  </a>
+  
   <a href="https://github.com/gab0071/solidity-advanced/commits/main/truffle" target="_blank">
     <img src="https://img.shields.io/github/last-commit/gab0071/solidity-advanced" alt="Badge showing when the last commit was made"/>
   </a>
@@ -64,12 +67,11 @@ $ npm install
 
 <h2>License</h2>
 
-<p>This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.</p>
-
-<p>Made with :heart: by <a href="https://github.com/gab0071" target="_blank">CatellaTech</a></p>
+<p>This project is under license from MIT. For more details, see the LICENSE file.</p>
 
 <h2>Contributing</h2>
-
 <p> Contributions are always welcome! Open a PR or an issue!</p>
 
-<p> Thank you! 😊 </p>
+<br>
+
+<p align="center">Made with :heart: by <a href="https://github.com/gab0071" target="_blank">CatellaTech</a></p>
