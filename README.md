@@ -52,9 +52,9 @@ $ npm install
 - <a href="https://www.npmjs.com/package/@openzeppelin/contracts"> OpenZeppelin </a>
 - <a href="https://www.npmjs.com/package/ganache?activeTab=readme"> Ganache CLI  </a>
 - <a href="https://trufflesuite.com/ganache/"> Ganache GUI  </a>
-- <p><a href="https://web3js.readthedocs.io/en/v1.8.1/"> Web3.js </a></p>
-- <p><a href="https://docs.ethers.io/v5/getting-started/"> Ethers.js </a>: It includes the implementation of an Ethereum wallet and utilities in JavaScript and TypeScript.</p>
-- <p>To access an Ethereum node: (<a href="https://www.alchemy.com/"> Alchemy </a>)</p>
+- <a href="https://web3js.readthedocs.io/en/v1.8.1/"> Web3.js </a>
+- <a href="https://docs.ethers.io/v5/getting-started/"> Ethers.js</a>
+- To access an Ethereum node: (<a href="https://www.alchemy.com/"> Alchemy </a>)
 
 <h2>Prettier definition </h2>
 <p> Prettier offers support for multiple languages and frameworks. What <Prettier> offers is to take your code and "re-format" it based on the defined settings thus maintaining a consistent style. Making it much more readable and without worrying about how you write it initially.</p>
