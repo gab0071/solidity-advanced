@@ -1,0 +1,17 @@
+{
+  "name": "ethersjs",
+  "version": "1.0.0",
+  "description": "Making some stuff with ethers.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "catellaTech",
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
