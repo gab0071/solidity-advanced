@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
-import smart_contract from '../abis/Migrations.json';
+
+// Importamos nuestros contratos
+import TechToken from '../abis/TechToken.json';
+import CatellaToken from '../abis/CatellaToken.json';
+import TokenFarm from '../abis/TokenFarm.json';
+
+// web3js para acceder a la blockchain
 import Web3 from 'web3';
-import logo from '../logo.png';
 
 import Navigation from './Navbar';
 import MyCarousel from './Carousel';
@@ -34,21 +39,24 @@ class App extends Component {
         const web3 = window.web3;
         const accounts = await web3.eth.getAccounts();
         this.setState({account: accounts[0]});
+        console.log('Account 0: ', accounts[0]);
         // Ganache -> 5777, Rinkeby -> 4, BSC -> 97
         const networkId = await web3.eth.net.getId();
         console.log('networkid:', networkId);
-        const networkData = smart_contract.networks[networkId];
-        console.log('NetworkData:', networkData);
 
-        if (networkData) {
-            const abi = smart_contract.abi;
-            console.log('abi', abi);
-            const address = networkData.address;
-            console.log('address:', address);
-            const contract = new web3.eth.Contract(abi, address);
-            this.setState({contract});
-        } else {
-            window.alert('¡El Smart Contract no se ha desplegado en la red!');
+        // Carga del TechToken
+        const techTokenData = TechToken.networks[networkId];
+        console.log(techTokenData);
+        if (techTokenData) {
+            const techToken = new web3.eth.Contract(
+                TechToken.abi,
+                techTokenData.address
+            );
+            this.setState({techToken: techToken});
+            let techTokenBalance = await techToken.methods
+                .balanceOf(this.state.account)
+                .call();
+            this.setState({techTokenBalance: techTokenBalance.toString()});
         }
     }
 
@@ -57,6 +65,8 @@ class App extends Component {
         this.state = {
             account: '0x0',
             loading: true,
+            techToken: {},
+            techTokenBalance: '0',
         };
     }
 
@@ -72,19 +82,6 @@ class App extends Component {
                             className="col-lg-12 d-flex text-center"
                         >
                             <div className="content mr-auto ml-auto">
-                                <a
-                                    href="https://github.com/gab0071"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img
-                                        src={logo}
-                                        className="App-logo"
-                                        alt=""
-                                        width="100%"
-                                        height="80%"
-                                    />
-                                </a>
                                 <h2>
                                     Staking DApp (Autor:{' '}
                                     <a href="https://github.com/gab0071">
