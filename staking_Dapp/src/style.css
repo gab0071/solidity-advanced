@@ -14,8 +14,8 @@
     font-family: 'DynaPuff',cursive;
     letter-spacing: 3px;
     transform: translate(-50%,-50%);
-    text-shadow: 5px 5px #7552ff;
-    -webkit-text-fill-color: #ff5fac;
+    text-shadow: 5px 5px #414141;
+    -webkit-text-fill-color: #adff33;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #414141;
 }
@@ -31,10 +31,14 @@
 
 .texto {
     color: #414141;
+    font-size: 18px;
+    font-family: cursive;
 }
 
 .ltexto {
     color: #414141;
+    font-size: 17px;
+    font-family: cursive;
 }
 .card {
     border-radius: 30px;
@@ -73,6 +77,11 @@
 
 tbody {
     border-color: #414141;
+}
+
+.btn-primary {
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 
