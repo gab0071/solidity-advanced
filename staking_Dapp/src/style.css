@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Cavea&family=DynaPuff&family=Montserrat:wght@500&display=swap');
+.App {
+    background-color: #ddc7f2;
+}
+
+.tittle {
+    text-align: center;
+    width: 700;
+    margin-bottom: 10px;
+    margin-left: 670px;
+    margin-top: 20px;
+    line-height: 80px;
+    font-size: 70px;
+    font-family: 'DynaPuff',cursive;
+    letter-spacing: 3px;
+    transform: translate(-50%,-50%);
+    text-shadow: 5px 5px #7552ff;
+    -webkit-text-fill-color: #ff5fac;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #414141;
+}
+
+.author {
+    margin-top: 100px;
+}
+
+.mt-3 {
+    width: 100%;
+    padding: 10px;
+}
+
+.texto {
+    color: #414141;
+}
+
+.ltexto {
+    color: #414141;
+}
+.card {
+    border-radius: 30px;
+}
+.card-body{
+    width: 450px;
+    height: 250px;
+}
+
+.mb-3{
+    padding-top: 30px;
+}
+
+.stake {
+    margin-right: 110px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-family: cursive;
+}
+
+.balance {
+   margin-left: -50px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: cursive; 
+    
+}
+
+.input-group {
+    padding-left: 23px;
+}
+
+.input-group-text {
+    font-family: cursive;
+}
+
+tbody {
+    border-color: #414141;
+}
+
+
+

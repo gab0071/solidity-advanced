@@ -8,8 +8,11 @@ import TokenFarm from '../abis/TokenFarm.json';
 // web3js para acceder a la blockchain
 import Web3 from 'web3';
 
+// Accediendo a los componentes de la Dapp
 import Navigation from './Navbar';
 import MyCarousel from './Carousel';
+import Main from './Main';
+import  '../style.css';
 
 class App extends Component {
     async componentDidMount() {
@@ -44,7 +47,7 @@ class App extends Component {
         const networkId = await web3.eth.net.getId();
         console.log('networkid:', networkId);
 
-        // Carga del TechToken
+        // Carga del TechToken -> Token para hacer staking
         const techTokenData = TechToken.networks[networkId];
         console.log(techTokenData);
         if (techTokenData) {
@@ -56,9 +59,78 @@ class App extends Component {
             let techTokenBalance = await techToken.methods
                 .balanceOf(this.state.account)
                 .call();
+            console.log(techTokenBalance);
             this.setState({techTokenBalance: techTokenBalance.toString()});
+        } else {
+            window.alert('Tech token no se ha desplegado en la red');
         }
+
+        // Carga de CatellaToken -> Token de recompesa
+        const catellaTokenData = CatellaToken.networks[networkId];
+        console.log(catellaTokenData);
+        if (catellaTokenData) {
+            const catellaToken = new web3.eth.Contract(
+                TechToken.abi,
+                catellaTokenData.address
+            );
+            this.setState({catellaToken: catellaToken});
+            let catellaTokenBalance = await catellaToken.methods
+                .balanceOf(this.state.account)
+                .call();
+            console.log(catellaTokenBalance);
+            this.setState({
+                catellaTokenBalance: catellaTokenBalance.toString(),
+            });
+        } else {
+            window.alert('Catella token no se ha desplegado en la red');
+        }
+
+        // Carga de TokenFarm -> smart contract de la gestion de la DeFi
+        const tokenFarmData = TokenFarm.networks[networkId];
+        if (tokenFarmData) {
+            const tokenFarm = new web3.eth.Contract(
+                TokenFarm.abi,
+                tokenFarmData.address
+            );
+            this.setState({tokenFarm: tokenFarm});
+            let stakingBalance = await tokenFarm.methods
+                .stakingBalance(this.state.account)
+                .call();
+            console.log(stakingBalance);
+            this.setState({stakingBalance: stakingBalance.toString()});
+        } else {
+            window.alert('Token Farm no se ha desplegado en la red');
+        }
+
+        this.setState({loading: false});
     }
+
+    // funcion para hacer staking del token TechToken
+    stakeTokens = (amount) => {
+        this.setState({loading: true});
+        this.state.techToken.methods
+            .approve(this.state.tokenFarm._address, amount)
+            .send({from: this.state.account})
+            .on('transactionHash', (hash) => {
+                this.state.tokenFarm.methods
+                    .stakeTokens(amount)
+                    .send({from: this.state.account})
+                    .on('transactionHash', (hash) => {
+                        this.setState({loading: false});
+                    });
+            });
+    };
+
+    // Funcion para hacer unstaking de nuestros tokens
+    unstakeTokens = (amount) => {
+        this.setState({loading: true});
+        this.state.tokenFarm.methods
+            .unstakeTokens()
+            .send({from: this.state.account})
+            .on('transactionHash', (hash) => {
+                this.setState({loading: false});
+            });
+    };
 
     constructor(props) {
         super(props);
@@ -67,32 +139,52 @@ class App extends Component {
             loading: true,
             techToken: {},
             techTokenBalance: '0',
+            catellaToken: {},
+            catellaTokenBalance: '0',
+            tokenFarm: {},
+            stakingBalance: '0',
         };
     }
 
     render() {
+        let content;
+        if (this.state.loading) {
+            content = (
+                <p id="loader" className="text-center">
+                    Loading...
+                </p>
+            );
+        } else {
+            content = (
+                <Main
+                    techTokenBalance={this.state.techTokenBalance}
+                    catellaTokenBalance={this.state.catellaTokenBalance}
+                    stakingBalance={this.state.stakingBalance}
+                    stakeTokens={this.stakeTokens}
+                    unstakeTokens={this.unstakeTokens}
+                />
+            );
+        }
         return (
             <div>
                 <Navigation account={this.state.account} />
-                <MyCarousel />
                 <div className="container-fluid mt-5">
                     <div className="row">
+                    <h1 className='tittle'>Staking Dapp</h1>
                         <main
                             role="main"
                             className="col-lg-12 d-flex text-center"
                         >
                             <div className="content mr-auto ml-auto">
-                                <h2>
+                                {content}
+                                
+                                <h5 className='author'>
                                     Staking DApp (Autor:{' '}
                                     <a href="https://github.com/gab0071">
                                         CatellaTech✨⛓
                                     </a>
                                     )
-                                </h2>
-                                <p>
-                                    Edita <code>src/components/App.js</code> y
-                                    guarda para recargar.
-                                </p>
+                                </h5>
                                 <a
                                     className="App-link"
                                     href="https://github.com/gab0071"
@@ -106,6 +198,7 @@ class App extends Component {
                                 </a>
                             </div>
                         </main>
+                        &nbsp; &nbsp; &nbsp; &nbsp;
                     </div>
                 </div>
             </div>

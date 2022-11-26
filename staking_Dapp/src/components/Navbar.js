@@ -7,7 +7,7 @@ const Navigation = ({ account }) => {
         <Navbar expand="lg" bg="dark" variant="dark">
             <Container>
                 <Navbar.Brand href="https://blockstellart.com">
-                    &nbsp; DApp
+                    &nbsp; Staking Dapp 💰
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar navbar-dark bg-primary" />
                 <Navbar.Collapse id="navbar navbar-dark bg-primary">
@@ -15,7 +15,23 @@ const Navigation = ({ account }) => {
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp;
+                                &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp;
+                        <Nav.Link 
                             href={`https://etherscan.io/address/${account}`}
                             target="_blank"
                             rel="noopener noreferrer"

@@ -19,5 +19,5 @@ module.exports = async function (deployer, accounts) {
     await catellaToken.transfer(tokenFarm.address, '1000000000000000000000000');
 
     // Transferencia de los tokens para el Staking
-    // await techToken.transfer(accounts[1], '100000000000000000000');
+     await techToken.transfer('0xA0BA2Fb09D6FF1D8f97140f1D85a54478Ac6478c', '100000000000000000000');
 };
